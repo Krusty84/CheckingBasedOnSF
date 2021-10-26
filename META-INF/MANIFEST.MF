@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CheckingBasedOnSF
+Bundle-SymbolicName: CheckingBasedOnSF;singleton:=true
+Bundle-Version: 1.0.0.0
+Bundle-Vendor: SIEMENS PLM (MOSCOW RUS)
+Automatic-Module-Name: CheckingBasedOnSF
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.polarsys.capella.core.validation;bundle-version="1.3.0"
+Import-Package: org.eclipse.emf.validation,
+ org.eclipse.ui.console,
+ org.polarsys.capella.core.validation

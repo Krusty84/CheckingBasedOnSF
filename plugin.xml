@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension point="org.eclipse.emf.validation.constraintProviders">
+      <constraintProvider>
+         <!-- какую область имен затрагивает эта проверка -->
+         <package namespaceUri="http://www.polarsys.org/capella/core/fa/1.3.0"/>
+         <!-- категория проверки -->
+         <constraints categories="capella.category/transition/justification/system_analysis">
+           <!-- 
+           в каком классе реализована логика проверки
+           какой ID у проверки
+           включена или выключена по умолчанию
+           на каком язык написана
+           в каком режиме работает
+           имя
+           критичность
+           код ошибки -->
+           <!-- первая проверка, -->
+            <constraint
+                  class="chekingbasedonsf.CheckingSystemFunctionWhatBasedOn"
+                  id="TJ_SA_100"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="TJ_SA_100 - Покрытие системной функцией заделкарированного операционного действия"
+                  severity="ERROR"
+                  statusCode="1">
+                  <!-- сообщение выводимое при диагностировании проверки-->
+               <message>
+                 Системная функция {1} не связанна ни с одним из операционных действий!
+               </message>
+               <!-- какой класс артефактов проверяется-->
+               <target class="SystemFunction"/>
+               <!-- описание проверки-->
+               <description>
+                  Данная проверка выявляет отсутствие связи между введеной системной функцией с ранее задекларированным операционным действием.
+               </description>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+</plugin>
